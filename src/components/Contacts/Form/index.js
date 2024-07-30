@@ -17,7 +17,7 @@ function Form(addContacts,contacts) {
             return false;
         }
 
-        addContacts(...contacts,form)
+        addContacts([...contacts,form])
         
     }
   return (
