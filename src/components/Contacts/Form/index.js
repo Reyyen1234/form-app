@@ -5,14 +5,17 @@ function Form(addContacts,contacts) {
     useEffect(()=>{
         setForm({fullname:"",phone_number:""})
     },[contacts])
+    // onchangeInput: inputun isi degistigi anda state atamasini yapabilmesi icin gerekli olan fonksiyon olacak
     const onChangeInput=(e)=>{
         setForm({...form,[e.target.name]:e.target.value})
         //... noktanin anlami bir once deger getir
     };
+    //buttona bastigimiz anda
     const onSubmit=(e)=>{
+      //sayfa yenilenmesi engellemek icin
         e.preventDefault();
 
-        
+      //fullname ve phonenumberi birini bos biraktiginda ekleme yapmayack
         if(form.fullname ==="" || form.phone_number ===""){
             return false;
         }
